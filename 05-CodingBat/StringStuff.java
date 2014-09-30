@@ -19,6 +19,8 @@ public int diff21(int n) {
   } else {
   return (21-n);
   }
+
+
 }
 }
 
