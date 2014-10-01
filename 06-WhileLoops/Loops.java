@@ -1,3 +1,4 @@
+//15 minutes
 public class Loops{
 public String frontTimes(String str, int n) {
   int f = 3;
@@ -16,7 +17,7 @@ public String frontTimes(String str, int n) {
 }
 
 
-
+//5 minutes
 public String stringBits(String str) {
 
 String ans = "";
@@ -29,7 +30,7 @@ while(c<str.length()){
   
 }
 
-
+//7 minutes
 public String stringYak(String str) {
   String a = "";
   int i = 0;
@@ -44,7 +45,7 @@ public String stringYak(String str) {
   
   return a;
 }
-
+//10 minutes
 public int stringMatch(String a, String b) {
   int count = 0;
   int l = 0;
