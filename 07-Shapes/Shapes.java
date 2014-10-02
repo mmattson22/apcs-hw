@@ -32,25 +32,26 @@ public class Shapes {
 	return ans;
 
 }
-//30 minutes. Does not work.
+//30 minutes Now works.
   public String tri2(int h){
-	String ans = "";
-	int r = h;
-	int spaces = h - 1;
-	String ast = "*";
-	String space = "";
-	while(spaces > 0){
-	 space = space + " ";
-	 spaces = spaces - 1;
-	}
-	ans = ast + space;
-	while(r > 0){
-	 ans = ast+ans.substring(1,r)+"\n";
-	 r = r - 1;
-	 ast = ast + "*";
-	}
-	return ans;
+        String ans = new String();
+        int row = 1;
+        while (row <= h) {
+        int i = 0;
+        int spaces = h - row;
+        while (i < spaces) {
+                ans += " ";
+                i = i + 1;
+            }
+        while (i < h)  {
+                ans += "*";
+                i= i + 1;
+            }
+            ans += "\n";
+            row= row + 1;
+        }
+        return ans;
+    }
 
-}
 }
 
