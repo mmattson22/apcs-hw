@@ -1,4 +1,14 @@
 public class Shapes {
+
+
+    public String line(String c, int n){
+	String s = "";
+	for (int i = 0;i<n;i++){
+	    s=s+c;
+	}
+	return s;
+    }
+
 //10 minutes
     public String box(int r, int c) {
 	String s = "";
