@@ -3,6 +3,7 @@ public class Driver {
 	Codingbat s1=new Codingbat();
 	System.out.println(s1.stringX("Helxxxlo"));
 	System.out.println(s1.stringSplosion("hello"));
+	System.out.println(s1.frame(20,30));
 }
 
 }
