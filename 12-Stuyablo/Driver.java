@@ -80,6 +80,7 @@ public class Driver {
 	String a = "";
 	while ((h >= 0)&& (mh >= 0)){
 	 int random = (int )(Math.random() * 6 + 1);
+	 int random2 = (int )(Math.random() * 6 + 1);
 	 System.out.println("Would you like to attack the monster or flee from it? ");
 	 a = sc2.nextLine();
 	 if (a.equals("flee")){
@@ -90,17 +91,17 @@ public class Driver {
 	  if (c.equals("mage")){
 	   System.out.println("You bravely cast a fireball on the monster");
 	   m=m-2;
-	   mh=mh-(30*random);
+	   mh=mh-(10*random);
 	   System.out.println("The monster viciously claws you in retaliation!");
-	   h=h-(random*15);
+	   h=h-(random2*5);
 	   System.out.println("Your Health: "+h+" Monster's Health: "+mh);
 	  }
 	  if (c.equals("warrior")){
 	   System.out.println("You bravely slash the monster");
 	   m=m-2;
-	   mh=mh-(att*random);
+	   mh=mh-((att/3)*random);
 	   System.out.println("The monster viciously claws you in retaliation!");
-	   h=h-(random*10);
+	   h=h-(random2*3);
 	   System.out.println("Your Health: "+h+" Monster's Health: "+mh);
 	}
 	   if (h>0&&mh<=0){
