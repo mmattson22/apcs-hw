@@ -2,7 +2,7 @@ import java.util.*;
 import java.io.*;
 
 public class BaseMonster {
-	int health = 200;
+	int health = 175;
 	int attack = 20;
 	int mana = 20;
 	String name = "FIXINPOST";

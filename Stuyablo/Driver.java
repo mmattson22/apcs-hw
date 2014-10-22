@@ -93,7 +93,7 @@ public class Driver {
 	   mh=mh-(30*random);
 	   System.out.println("The monster viciously claws you in retaliation!");
 	   h=h-(random*15);
-	   System.out.println(m+" "+mh);
+	   System.out.println("Your Health: "+h+" Monster's Health: "+mh);
 	  }
 	  if (c.equals("warrior")){
 	   System.out.println("You bravely slash the monster");
@@ -101,23 +101,27 @@ public class Driver {
 	   mh=mh-(att*random);
 	   System.out.println("The monster viciously claws you in retaliation!");
 	   h=h-(random*10);
-	   System.out.println(m+" "+mh);
-	  }
+	   System.out.println("Your Health: "+h+" Monster's Health: "+mh);
 	}
-	}
-	if (h>0){
+	   if (h>0&&mh<=0){
 	 System.out.println("CONGRATULATIONS " + n + " the " + c.substring(0,1).toUpperCase() + c.substring(1).toLowerCase());
 	 System.out.println("You have defeated the evil monster. We hope you enjoyed this fun little game");
-	 } else {
-	 System.out.println("You are now a tasty monster snack. Goodbye");
+	 System.exit(0);
+	 } 
+	  if (mh>0&&h<=0){
+	 System.out.println("You are now a tasty snack. Goodbye");
+	 System.exit(0);
 	}
-
+	  if (mh<=0&&h<0){
+	 System.out.println("You kill the monster as you take your dying breath.");
+	  System.exit(0);
+	}
 	
 
 
 
 
 
-	    
+	}
     }
-}
+}}
