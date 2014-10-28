@@ -52,13 +52,116 @@ public class  Arraystuff {
          }
 	return big;
 	}
+
+    public boolean more14(int[] nums) {
+  int count1 = 0;
+	int count4 = 0;
+	for (int i=0; i<nums.length; i++) {
+	    if (nums[i] == 1) {
+		count1 += 1;
+	    } else if (nums[i] == 4) {
+		count4 += 1;
+	    }
+	}
+	if (count1 > count4) {
+	    return true;
+	} else { 
+         return false;
+         }
+}
+
+	public int sum67(int[] nums) {
+ int sum = 0;
+	boolean last6 = false;
+	for (int i=0; i<nums.length; i++) {
+	    if (last6 == true) {
+		if (nums[i] == 7) {
+		    last6 = false;
+		}
+	    } else {
+		if (nums[i] == 6) {
+		    last6 = true;
+		} else {
+		    sum += nums[i];
+		}
+	    }
+	}
+	return sum;
+
+}
+
+	public int[] tenRun(int[] nums) {
+  for (int i = 0;i<nums.length;i++){
+   if (nums[i]%10==0){
+    for (int x=i+1; x<nums.length && !(nums[x]%10==0);x++){
+     nums[x] = nums[i];
+     }
+     }
+     }
+     return nums;
+    
+}
+
+	public boolean tripleUp(int[] nums) {
+   int a = 0;
+  for(int i=0;i<nums.length-2;i++){
+   if(((nums[i+1]==nums[i]+1)&&(nums[i+2]==nums[i]+2))){
+    return true;
+    } else {
+     a+=1;
+     }
+     }
+     return false;
+}
+
+	public boolean canBalance(int[] nums) {
+  int first = 0;
+  for(int i=0;i<nums.length;i++){
+   first+=nums[i];
+   int second = 0;
+   for (int x=nums.length-1;x>i;x--){
+    second+=nums[x];
+   }
+   if (first==second){
+    return true;
+    }
+   
+    }
+     return false;
+}
+
+	public int[] seriesUp(int n) {
+ int x=(n*(n+1)/2);
+ int c=0;
+ int[] s = new int[x];
+ for(int i=1; i<=n; i++){
+  for(int j=1; j<=i; j++){
+   s[c]=j;
+   c++;
+   }
+  }
+  return s;
+  }
+
+ public int freq(int[] a, int i){
+  int c = 0;
+  for(int x=0;x<a.length;x++){
+   if(a[x]==a[i]){
+    c++;
+    }
+    }
+   return c;
+  }
     /*--------------------- Main --------------------*/ 
 
     public static void main(String[] args) {
+	int[] a = {1,2,3,4,1,2,3,4,1,2,3,4};
 	Arraystuff as = new Arraystuff();
 	System.out.println(as);
 	System.out.println(as.find(110));
-	System.out.println(as.maxVal());
+	System.out.println(as.freq(a,3));
+	
+	
     }
     
 }
