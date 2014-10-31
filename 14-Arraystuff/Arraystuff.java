@@ -152,6 +152,22 @@ public class  Arraystuff {
     }
    return c;
   }
+
+  public int maxMirror(int[] nums) {
+  int ans = 0;
+    for (int i = 0; i < nums.length; i++) {
+     for (int x = nums.length-1; x >= i; x--) {
+      int place = 0;
+        while ( i+place < nums.length && x-place >= 0 && nums[i+place] == nums[x-place] ) {
+          place++; 
+        }
+        if (place > ans)
+          ans = place;
+      }
+    }
+    return ans;
+  }
+
     /*--------------------- Main --------------------*/ 
 
     public static void main(String[] args) {
