@@ -15,7 +15,7 @@ public class  Arraystuff {
 	rnd = new Random();
 	a = new int[n];
 	for (int i=0; i<a.length;i++){
-	    a[i] = 75+rnd.nextInt(76);
+	    a[i] = 1+rnd.nextInt(20);
 	}
     }
 
@@ -168,14 +168,26 @@ public class  Arraystuff {
     return ans;
   }
 
+ public int mode(int[] A){
+  int ans=0;
+  for (int x=0;x<A.length;x++){
+   if ((freq(A,x))>(freq(A,ans))){
+    ans=A[x];
+   }else{
+    x++;
+   }
+   
+}
+return ans;
+}
     /*--------------------- Main --------------------*/ 
 
     public static void main(String[] args) {
 	int[] a = {1,2,3,4,1,2,3,4,1,2,3,4};
 	Arraystuff as = new Arraystuff();
 	System.out.println(as);
-	System.out.println(as.find(110));
-	System.out.println(as.freq(a,3));
+	System.out.println(as.mode(as.a));
+	
 	
 	
     }
