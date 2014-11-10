@@ -20,7 +20,7 @@ public class  Arraystuff {
     }
 
     public Arraystuff(){
-	this(100);
+	this(200000);
     }
     
 
@@ -185,7 +185,7 @@ return ans;
     public static void main(String[] args) {
 	int[] a = {1,2,3,4,1,2,3,4,1,2,3,4};
 	Arraystuff as = new Arraystuff();
-	System.out.println(as);
+	//System.out.println(as);
 	System.out.println(as.mode(as.a));
 	
 	
