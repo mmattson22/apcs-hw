@@ -1,5 +1,5 @@
-import java.util.*
-import java.io.*
+import java.util.*;
+import java.io.*;
 
 public class StringArray{
     private String[] data;
@@ -50,13 +50,13 @@ public class StringArray{
 	StringArray as = new StringArray();
 	System.out.println(as);
 	System.out.println(as.size());
-	System.out.println(as.add("man"));
-	System.out.println(as.add("tan"));
-	System.out.println(as.add("Dan"));
-	System.out.println(as.add("White"));
-	System.out.println(as.add("Blue"));
+	System.out.println(as.add("You"));
+	System.out.println(as.add("can't"));
+	System.out.println(as.add("handle"));
+	System.out.println(as.add("the"));
+	System.out.println(as.add("truth"));
 	System.out.println(as);
-	System.out.println(as.remove(0));
+	System.out.println(as.remove(2));
 	System.out.println(as);
     }
 }
