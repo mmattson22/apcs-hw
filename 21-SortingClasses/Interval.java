@@ -1,80 +1,109 @@
-import java.util.*;
 import java.io.*;
+import java.util.*;
 
-public class Interval {
 
-    private int low;
-    private int high;
-    private Random r = new Random();
-    private static int numIntervals = 0;
+/*
+interface name {
+  method1_signature;
+	method2_signature;
+	etc
+}
+method signature is:  public/private return_type name(params);
+For example, the built in Java Comparable interface looks something
+like this:
+interface Comparable { 
+  public int compareTo(Object other);
+}
+To agree to implement an interface use "implements"
+ex:
+class myClass implements Comparable{
+ // class definitions here
+}
+A class can only extend one class but it can implement as many
+interfaces as it wants (separated by ,)
+ */
 
-    private void setup(int l, int h){
-	high = h;
-	low = l;
-    }
 
-    //If you want to create your own Interval
-    public Interval(int l, int h) {
-	this.low = l;
-	this.high = h;
-	numIntervals = numIntervals + 1;
-    }
 
-    //If you want your own Interval created for you;
-    public Interval() {
-	int h = r.nextInt(100);
-	//add 1 to make sure that h will be greater than 0 (in case l is greater than 0)
-	int l = 1+r.nextInt(h);
 
-	low = l;
-	high = h;
-	numIntervals = numIntervals + 1;
-    }
 
-    public String toString() {
-	//String result = "Interval " + numIntervals + ": " + "[" + low + ", " + high + "]";
-	String result = "[" + low + "," + high + "]";
-	return result;
-    }
+class Interval implements Comparable {
 
-    //compareTo routine
-    //compares two intervals
-    //one with lower low is less; if lows are equal, one with lower high is less
-    //equal = 0
-    //first interval less than = -1
-    //first interval greater than =  1
+		private int low, high;
+		private static Random r = new Random();
+		private static int numIntervals = 0;
+		
+		private void setup(int l, int h){
+				high = h;
+				low = l;
+				numIntervals = numIntervals + 1;
+		}
+		
+		public Interval(){
+				int h = 1 + r.nextInt(100);
+				int l = r.nextInt(h);
+				setup(l,h);
+		}
 
-    public int compareTo(Interval other) {
-        int n = this.low - other.low;
-        if (n == 0) {
-            return this.high - other.high;
-        } else {
-            return n;
-        }
-    }
-	
-    public static void printStuff() {
-	System.out.println("Stuff");
-    }
-    
-    public static void main (String[] args) {
-	
-	Interval ival = new Interval();
-	ival.printStuff(); //normal calling of an instance
-	printStuff(); // printStuff is static, so it can be called it without an instance
-	Interval.printStuff(); //or off a class
+		public Interval(int l, int h){
+						setup(l,h);
+		}
 
-	Interval[] a = new Interval[10];
-	for (int i = 0; i < 10; i++) {
-	    System.out.println(new Interval());
-	
-	}
-	System.out.println("____________________________________________________________________________");
-	Interval test = new Interval();
-	System.out.println(test);
-	Interval test2 = new Interval();
-	System.out.println(test2);
-	System.out.println(test.compareTo(test2));
-    }
+		public String toString(){
+				//String s = "Interval number "+ numIntervals + " -> [" +low+","+high+"]";
+				String s = "["+low+","+high+"]";
+				return s;
+		}
 
+		public int compareTo(Object other){
+				/* create a local variable and cast and assign the parameter */
+				Interval o = (Interval)other;
+				/*
+					if (this.low == o.low){
+						return this.high - o.high;
+				} else {
+						return this.low - o.low;
+				}
+				*/
+				return (this.high - this.low) - (o.high - o.low);
+		}
+		
+		public static void printStuff() {
+				System.out.println("Stuff");
+		}
+		
+		public static void main(String[] args) {
+
+				/* this works because printStuff is static -- it belongs
+					 to the class and is created with the class (not with instances)
+					 We can call it without Interval. because we're in the calss 
+				*/
+				printStuff();
+				Interval.printStuff(); // calling off the class, like Math.sqrt
+
+				Interval x = new Interval();
+				x.printStuff(); // but we can also call it off of an instance.
+
+				Interval[] a = new Interval[10];
+				for (int i = 0; i < a.length; i++) {
+						a[i] = new Interval();
+				}
+				System.out.println(Arrays.toString(a));
+
+				String[] sa = {"frog","toad","igauna","komodo dragon","bearded lizard"};
+				System.out.println(Arrays.toString(sa));
+				Arrays.sort(sa);
+				System.out.println(Arrays.toString(sa));
+
+				int[] ia = {20,1,55,100,33,201,24,17,78};
+				System.out.println(Arrays.toString(ia));
+				Arrays.sort(ia);
+				System.out.println(Arrays.toString(ia));
+				
+				System.out.println(Arrays.toString(a));
+				Arrays.sort(a);
+				System.out.println(Arrays.toString(a));
+				
+				
+		}
 }
