@@ -1,0 +1,6 @@
+Code Review
+
+Review of https://github.com/david19kerrigan/final/blob/master/newfile_java/newfile_java.pde by michael mattson
+
+The code works very well, and can be pretty clearly understood if you have an understanding of processing. All of the variables are declared at the top of the code, and it is laid out very linear-ly.  I think that the design is pretty good, and once the UI is polished a bit, I think that it would look and run pretty fantastically.  There are not many comments, but its not that hard to figure out.  There are some commented out lines at lines 19-20, 30-32, and it would be nice to have an explantanation as to why.
+I am also looking forward to multiple unit types.
